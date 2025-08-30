@@ -1,0 +1,226 @@
+/* src/assets/styles/main.css */
+@import 'tailwindcss';
+
+/* Import fonts from Google Fonts */
+/* @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap'); */
+
+/* Define your color variables */
+:root {
+  /* Font families - fonts are now loaded in HTML */
+  --font-english: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-arabic: 'IBM Plex Sans Arabic', 'Inter', ui-sans-serif, system-ui, sans-serif;
+
+  /* Primary colors */
+  --primary-50: #e6f1ff;
+  --primary-100: #cce3ff;
+  --primary-200: #99c7ff;
+  --primary-300: #66abff;
+  --primary-400: #338fff;
+  --primary-500: #0f62fe; /* Base primary color */
+  --primary-600: #0c4ecb;
+  --primary-700: #093b98;
+  --primary-800: #062765;
+  --primary-900: #031432;
+  --primary-950: #020a19;
+
+  /* Secondary colors */
+  --secondary-1: #ffc27a;
+  --secondary-2: #c8a977;
+  --secondary-3: #b5c4d0;
+  --secondary-4: #7a97ab;
+
+  /* Success colors */
+  --success-50: #e6f9f2;
+  --success-100: #ccf3e5;
+  --success-500: #02cd7c;
+  --success-900: #014f30;
+
+  /* Dark and light */
+  --dark: #121212;
+  --light-gray: #cecdcc;
+
+  /* Background colors */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8f9fa;
+
+  /* Text colors */
+  --text-primary: var(--dark);
+  --text-secondary: #4b5563;
+
+  /* Border colors */
+  --border-light: #e5e7eb;
+  --border-medium: #d1d5db;
+
+  /* Font families */
+  --font-english: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-arabic: 'IBM Plex Sans Arabic', 'Inter', ui-sans-serif, system-ui, sans-serif;
+}
+
+/* Apply the font family based on language */
+body:lang(en) {
+  font-family: var(--font-english);
+}
+
+body:lang(ar) {
+  font-family: var(--font-arabic);
+}
+
+/* Add Tailwind customizations to theme */
+@theme {
+  /* Color mappings for Tailwind */
+  --color-primary-50: var(--primary-50);
+  --color-primary-100: var(--primary-100);
+  --color-primary-200: var(--primary-200);
+  --color-primary-300: var(--primary-300);
+  --color-primary-400: var(--primary-400);
+  --color-primary-500: var(--primary-500);
+  --color-primary-600: var(--primary-600);
+  --color-primary-700: var(--primary-700);
+  --color-primary-800: var(--primary-800);
+  --color-primary-900: var(--primary-900);
+  --color-primary-950: var(--primary-950);
+
+  --color-secondary-1: var(--secondary-1);
+  --color-secondary-2: var(--secondary-2);
+  --color-secondary-3: var(--secondary-3);
+  --color-secondary-4: var(--secondary-4);
+
+  --color-success-50: var(--success-50);
+  --color-success-100: var(--success-100);
+  --color-success-500: var(--success-500);
+  --color-success-900: var(--success-900);
+
+  --color-dark: var(--dark);
+  --color-light-gray: var(--light-gray);
+
+  /* Background colors */
+  --color-bg-primary: var(--bg-primary);
+  --color-bg-secondary: var(--bg-secondary);
+
+  /* Text colors */
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+
+  /* Border colors */
+  --color-border-light: var(--border-light);
+  --color-border-medium: var(--border-medium);
+
+  /* Font families */
+  --font-family-sans: var(--font-english);
+  --font-family-arabic: var(--font-arabic);
+}
+
+/* Custom component styles using your color scheme */
+.btn-primary {
+  background-color: var(--primary-500);
+  color: white;
+  border: 1px solid var(--primary-500);
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-600);
+  border-color: var(--primary-600);
+}
+
+.btn-outline-primary {
+  background-color: transparent;
+  color: var(--primary-500);
+  border: 1px solid var(--primary-500);
+}
+
+.btn-outline-primary:hover {
+  background-color: var(--primary-500);
+  color: white;
+}
+
+/* PrimeVue component customizations */
+.p-button {
+  font-family: inherit; /* Inherit from body */
+  font-weight: 500;
+}
+
+.p-button.p-button-primary {
+  background: var(--primary-500);
+  border-color: var(--primary-500);
+}
+
+.p-button.p-button-primary:hover {
+  background: var(--primary-600);
+  border-color: var(--primary-600);
+}
+
+.p-button.p-button-secondary {
+  background: var(--secondary-3);
+  border-color: var(--secondary-3);
+  color: var(--text-primary);
+}
+
+.p-button.p-button-secondary:hover {
+  background: var(--secondary-4);
+  border-color: var(--secondary-4);
+}
+
+.p-inputtext {
+  font-family: inherit; /* Inherit from body */
+  border-color: var(--border-medium);
+}
+
+.p-inputtext:focus {
+  box-shadow: 0 0 0 2px rgba(15, 98, 254, 0.2);
+  border-color: var(--primary-500);
+}
+
+.p-card {
+  box-shadow:
+    0 1px 3px 0 rgba(0, 0, 0, 0.1),
+    0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  border: 1px solid var(--border-light);
+}
+
+/* RTL support for PrimeVue */
+[dir='rtl'] .p-dropdown .p-dropdown-trigger {
+  right: auto;
+  left: 0;
+}
+
+[dir='rtl'] .p-inputgroup-addon:first-child,
+[dir='rtl'] .p-inputgroup button:first-child,
+[dir='rtl'] .p-inputgroup input:first-child {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+
+[dir='rtl'] .p-inputgroup-addon:last-child,
+[dir='rtl'] .p-inputgroup button:last-child,
+[dir='rtl'] .p-inputgroup input:last-child {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+}
+
+/* Additional RTL support for Arabic */
+[dir='rtl'] {
+  text-align: right;
+}
+
+[dir='rtl'] .text-left {
+  text-align: right;
+}
+
+[dir='rtl'] .text-right {
+  text-align: left;
+}
+
+[dir='rtl'] .ml-2 {
+  margin-left: 0;
+  margin-right: 0.5rem;
+}
+
+[dir='rtl'] .mr-2 {
+  margin-right: 0;
+  margin-left: 0.5rem;
+}

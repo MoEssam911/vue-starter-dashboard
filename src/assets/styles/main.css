@@ -1,9 +1,6 @@
 /* src/assets/styles/main.css */
 @import 'tailwindcss';
-
-/* Import fonts from Google Fonts */
-/* @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap'); */
+@import 'primeicons/primeicons.css';
 
 /* Define your color variables */
 :root {
@@ -47,6 +44,7 @@
   /* Text colors */
   --text-primary: var(--dark);
   --text-secondary: #4b5563;
+  --text-muted: #cecdcc;
 
   /* Border colors */
   --border-light: #e5e7eb;
@@ -55,6 +53,10 @@
   /* Font families */
   --font-english: 'Inter', ui-sans-serif, system-ui, sans-serif;
   --font-arabic: 'IBM Plex Sans Arabic', 'Inter', ui-sans-serif, system-ui, sans-serif;
+}
+
+body {
+  background: #f7f7f7;
 }
 
 /* Apply the font family based on language */
@@ -101,6 +103,7 @@ body:lang(ar) {
   /* Text colors */
   --color-text-primary: var(--text-primary);
   --color-text-secondary: var(--text-secondary);
+  --color-muted: var(--text-muted);
 
   /* Border colors */
   --color-border-light: var(--border-light);
@@ -135,48 +138,6 @@ body:lang(ar) {
 }
 
 /* PrimeVue component customizations */
-.p-button {
-  font-family: inherit; /* Inherit from body */
-  font-weight: 500;
-}
-
-.p-button.p-button-primary {
-  background: var(--primary-500);
-  border-color: var(--primary-500);
-}
-
-.p-button.p-button-primary:hover {
-  background: var(--primary-600);
-  border-color: var(--primary-600);
-}
-
-.p-button.p-button-secondary {
-  background: var(--secondary-3);
-  border-color: var(--secondary-3);
-  color: var(--text-primary);
-}
-
-.p-button.p-button-secondary:hover {
-  background: var(--secondary-4);
-  border-color: var(--secondary-4);
-}
-
-.p-inputtext {
-  font-family: inherit; /* Inherit from body */
-  border-color: var(--border-medium);
-}
-
-.p-inputtext:focus {
-  box-shadow: 0 0 0 2px rgba(15, 98, 254, 0.2);
-  border-color: var(--primary-500);
-}
-
-.p-card {
-  box-shadow:
-    0 1px 3px 0 rgba(0, 0, 0, 0.1),
-    0 1px 2px 0 rgba(0, 0, 0, 0.06);
-  border: 1px solid var(--border-light);
-}
 
 /* RTL support for PrimeVue */
 [dir='rtl'] .p-dropdown .p-dropdown-trigger {

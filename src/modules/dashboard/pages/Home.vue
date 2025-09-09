@@ -1,15 +1,15 @@
 <template>
   <div>
     Home
-    <Button @click="showSuccess">Show Success</Button>
+    <!-- <Button @click="showSuccess">Show Success</Button>
     <Button @click="showError">Show Error</Button>
-    <Button @click="showCustom">Show Custom Message</Button>
-    <LanguageSwitcher />
+    <Button @click="showCustom">Show Custom Message</Button> -->
+    <!-- <LanguageSwitcher /> -->
   </div>
 </template>
 
 <script setup>
-import LanguageSwitcher from '@/components/global/LanguageSwitcher.vue'
+import LanguageSwitcher from '@/components/common/LanguageSwitcher.vue'
 import { usePrimeToast } from '@/composables/usePrimeToast'
 import Button from 'primevue/button'
 

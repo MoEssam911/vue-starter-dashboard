@@ -78,7 +78,35 @@ export const useAuthStore = defineStore('auth', {
       removeCookie('auth_user')
     },
 
-    // ... other methods remain the same
+    async logout() {
+      this.isLoading = true
+
+      try {
+        // Call logout endpoint if needed (optional)
+        // const { error } = await useFetch('/logout', {
+        //   method: 'POST',
+        //   immediate: true,
+        //   showToast: false,
+        // })
+
+        // Clear auth data regardless of API call result
+        this.clearAuthData()
+
+        // Redirect to login page
+        if (typeof window !== 'undefined') {
+          window.location.href = '/auth/login'
+        }
+
+        return true
+      } catch (error) {
+        console.error('Logout failed:', error)
+        // Still clear local data even if API call fails
+        this.clearAuthData()
+        throw error
+      } finally {
+        this.isLoading = false
+      }
+    },
   },
 
   getters: {

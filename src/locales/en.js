@@ -11,7 +11,10 @@ export default {
     success: "Success",
     loading: "Loading...",
     language_en: "English",
-    language_ar: "Arabic"
+    language_ar: "Arabic",
+    settings: "Settings",
+    logout: "Logout",
+    search: "Search",
   },
   // ... rest of the translations
 }

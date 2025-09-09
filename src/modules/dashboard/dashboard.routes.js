@@ -6,6 +6,12 @@ export default [
     component: () => import('@/modules/dashboard/pages/Home.vue'),
     meta: { title: 'Home', requiresAuth: true },
   },
+  {
+    path: '/settings',
+    name: 'Settings',
+    component: () => import('@/modules/dashboard/pages/Settings.vue'),
+    meta: { title: 'Settings', requiresAuth: true },
+  },
   // {
   //   path: 'profile',
   //   name: 'Profile',
